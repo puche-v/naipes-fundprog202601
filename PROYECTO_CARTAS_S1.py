@@ -128,5 +128,5 @@ elif opciones == "s":
     print("Adios!")
     
 else:
-    Print("Opción no encontrada :(")
+    print("Opción no encontrada :(")
     
