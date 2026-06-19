@@ -149,4 +149,4 @@ while opciones != "s":
         
     else:
         print("Opción no encontrada :(")
-        
+        opciones = "s" 
