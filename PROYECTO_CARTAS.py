@@ -18,7 +18,11 @@ carta10 = [" ___ ", "|9  |", "| ♣ |", "|__9|"]
 
 baraja = [carta1, carta2, carta4, carta5, carta6, carta7, carta8, carta9, carta10]
 
-cartainv = [" ___ ", "|   |", "|   |", "|___|"]
+cartainv1 = [" ___ ", "|   |", "|   |", "|___|"]
+cartainv2 = [" ___ ", "|   |", "|   |", "|___|"]
+cartainv3 = [" ___ ", "|   |", "|   |", "|___|"]
+
+cartasinv = [cartainv1, cartainv2, cartainv3]
 
 def partida(): #funcion para que salgan 2 cartas aleatorias y la reina de corazones (en posiciones aleatorias tmb)
     c1 = random.choice(baraja) #sacan una carta aleatoria de baraja
@@ -28,7 +32,9 @@ def partida(): #funcion para que salgan 2 cartas aleatorias y la reina de corazo
 def fila(listacartas): #funcion para que las cartas no se vean asi feas en una lista y que se pongan una al lado de la otra
     for i in range(4): #elciclo hace que como las cartas tienen 4 partes, se junten en una sola carta
         print(f"{listacartas[0][i]}   {listacartas[1][i]}   {listacartas[2][i]}") #esto es que las cartas se vayan armando (i es la parte de la carta y el numero es la carta en si, osea si i es 0 es el techo y asi)
-
+def filainv(listacartasinv): 
+    for i in range(4): 
+        print(f"{listacartasinv[0][i]}   {listacartasinv[1][i]}   {listacartasinv[2][i]}")
 #---------------------- funcionamiento del juego desde aqui
 nombre = str(input("Por favor escriba su nombre: "))
 while opciones != "s":
@@ -79,6 +85,7 @@ while opciones != "s":
                 juego[0] = postemp
                 print("intercambiando Izquierda con Derecha")
         time.sleep(2)
+        filainv(cartasinv) #aqui imprime las cartas invertidas en fila
         posicioncor = juego.index(carta3)
         if posicioncor == 0:
             posicioncor = "I"
